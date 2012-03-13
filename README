@@ -1,0 +1,7 @@
+Estes arquivos fazem parte da configuração para Moodle 1.9 e LDAP,
+para se configurar um moodle desta versão para ser integrado aos
+cadastros do LDAP e os usuários, deve-se alterar os 2 arquivos do
+moodle pois foram efetuadas correções nos mesmos, o sistema loga no
+banco LDAP, com o usuário e senha informado, verifica se existe algum
+grupo novo no Moodle/Pessoas/DN e se há algum novo, cadastra e vincula
+os usuarios e professores que devem estar lá.

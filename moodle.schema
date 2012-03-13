@@ -1,0 +1,26 @@
+#attributetype ( oidAttrBase:44 NAME ( 'teacherUid' ) SUP memberUid
+#        DESC 'which person is a teacher of this course'
+#    )
+
+#objectclass ( oidObjRoot:14 NAME 'moodleCourse' SUP top STRUCTURAL
+#        DESC 'course available in Moodle'
+#        MUST ( cn  )
+#        MAY ( owner $ gn $ sn $ seeAlso $ description $ memberUid $ teacherUid )
+#        )
+
+#Note: Openldap 2.x will need something like:
+
+attributetype   ( 1.2.1.1.1.1.2.1 NAME 'teacherUid'
+                SUP memberUid
+                DESC 'which person is a teacher of this course'
+                EQUALITY caseExactIA5Match
+                SUBSTR caseExactIA5SubstringsMatch
+                SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+
+objectclass     ( 1.2.1.1.1.1.1.1
+                NAME 'moodleCourse'
+                SUP top STRUCTURAL
+                DESC 'course available in Moodle'
+                MUST ( cn  )
+                MAY ( owner $ gn $ sn $ seeAlso $ description $ memberUid $ teacherUid )
+                )
